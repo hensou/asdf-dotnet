@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for dotnet.
-GH_REPO="https://github.com/hensou/asdf-dotnet"
+GH_REPO="https://github.com/dotnet/core"
 TOOL_NAME="dotnet"
 TOOL_TEST="dotnet --version"
 
