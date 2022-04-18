@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for dotnet.
 GH_REPO="https://github.com/dotnet/core"
 TOOL_NAME="dotnet"
 TOOL_TEST="dotnet --version"
@@ -31,9 +30,15 @@ list_github_tags() {
 }
 
 list_all_versions() {
-  # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-  # Change this function if dotnet has other means of determining installable versions.
   list_github_tags
+}
+
+download_installer() { 
+  local downloader
+  downloader=$1
+  echo "* Downloading $TOOL_NAME installer..."
+  $downloader -sSL https://dot.net/v1/dotnet-install.sh > "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
+  chmod +x "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
 }
 
 download_release() {
@@ -59,13 +64,17 @@ install_version() {
 
   (
     mkdir -p "$install_path"
-    cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
+
+    #TODO: remove this line as it is not necessary
+    #cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
+    "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel Current --version "$ASDF_INSTALL_VERSION" --no-path
 
     # TODO: Asert dotnet executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
-    test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
+    test -x "$install_path/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
+    rm -rf "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
     echo "$TOOL_NAME $version installation was successful!"
   ) || (
     rm -rf "$install_path"
