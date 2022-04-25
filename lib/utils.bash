@@ -29,46 +29,42 @@ list_github_tags() {
     sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
 }
 
-
 # taken from  asdf-dotnet-core plugin
 RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json
 FILE="releases.json"
 KEY="latest-sdk"
 
 download() {
-    curl -s $RELEASES_URI
+  curl -s $RELEASES_URI
 }
 
 match_key() {
-    grep -Eo '"'$1'": \".*\"'
+  grep -Eo '"'$1'": \".*\"'
 }
 
 sanitize() {
-    sed -e 's/"'$1'": \"//;s/\"//'
+  sed -e 's/"'$1'": \"//;s/\"//'
 }
 
 gnutac() {
-    if hash tac 2>/dev/null; then
-        tac "$@"
-    else
-        tail -r "$@"
-    fi
+  if hash tac 2>/dev/null; then
+    tac "$@"
+  else
+    tail -r "$@"
+  fi
 }
 
-# end taken from  asdf-dotnet-core plugin
-
 list_all_versions() {
-  #TODO: remove this function call
-  #list | xargs -n1 echo_github_tags
   echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY) | sed 's/ /\n/g'
-} 
+}
 
-download_installer() { 
+download_installer() {
   local downloader
   downloader=$1
   echo "* Downloading $TOOL_NAME installer..."
-  $downloader -sSL https://dot.net/v1/dotnet-install.sh > "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
+  $downloader -sSL https://dot.net/v1/dotnet-install.sh >"$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
   chmod +x "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
+
 }
 
 download_release() {
