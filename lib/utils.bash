@@ -91,11 +91,8 @@ install_version() {
   (
     mkdir -p "$install_path"
 
-    #TODO: remove this line as it is not necessary
-    #cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
     "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel Current --version "$ASDF_INSTALL_VERSION" --no-path
 
-    # TODO: Asert dotnet executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
