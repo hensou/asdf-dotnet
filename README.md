@@ -3,7 +3,7 @@
 # asdf-dotnet [![Build](https://github.com/hensou/asdf-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/hensou/asdf-dotnet/actions/workflows/build.yml) [![Lint](https://github.com/hensou/asdf-dotnet/actions/workflows/lint.yml/badge.svg)](https://github.com/hensou/asdf-dotnet/actions/workflows/lint.yml)
 
 
-[dotnet](https://github.com/hensou/asdf-dotnet) plugin for the [asdf version manager](https://asdf-vm.com).
+[dotnet](https://github.com/hensou/asdf-dotnet) plugin for the [asdf version manager](https://asdf-vm.com). This repo is inspired by [asdf-dotnet-core](https://github.com/emersonsoares/asdf-dotnet-core) by @emersonsoares.
 
 </div>
 
