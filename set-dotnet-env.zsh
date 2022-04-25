@@ -4,6 +4,9 @@ asdf_update_dotnet_home() {
   if [[ -n "${dotnet_path}" ]]; then
     export DOTNET_ROOT
     DOTNET_ROOT="$(dirname "$(realpath "${dotnet_path}")")"
+    export MSBuildSDKsPath
+    DOTNET_VERSION="$(dotnet --version)"
+    export MSBuildSDKsPath="$DOTNET_ROOT/sdk/$DOTNET_VERSION/Sdks"
   fi
 }
 
