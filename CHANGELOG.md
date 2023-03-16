@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2022-04-27)
+
+
+### Bug Fixes
+
+* Add scripts to set DOTNET_ROOT env variable ([5cf95a5](https://github.com/hensou/asdf-dotnet/commit/5cf95a50477a052bbb440d2fb4657f6f6794b6ed))
+
+
 ## 1.0.0 (2022-04-27)
 
 
