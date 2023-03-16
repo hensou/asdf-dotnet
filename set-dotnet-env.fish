@@ -5,6 +5,7 @@ function asdf_update_dotnet_home --on-event fish_prompt
     set -gx DOTNET_ROOT (dirname "$full_path")
     set --local dotnet_version (dotnet --version)
     set -gx MSBuildSDKsPath (realpath "$DOTNET_ROOT/sdk/$dotnet_version/Sdks")
+    
   end
 end
 
