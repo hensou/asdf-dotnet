@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.0...v1.0.1) (2023-03-16)
+
+
+### Bug Fixes
+
+* wrong case on the dotnet_version variable ([b5c6d51](https://www.github.com/hensou/asdf-dotnet/commit/b5c6d512cf8444b61a41e313d87ee80cb7dd20c3))
+
 ## 1.0.1 (2022-04-27)
 
 
