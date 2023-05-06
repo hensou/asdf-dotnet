@@ -7,7 +7,7 @@
 
 </div>
 
-> :warning: Currently, as reported in #6, there could be some issues with some language servers failing to detect the dotnet installation.
+> :warning: Currently, as reported in #6, there could be some issues with [csharp-ls](https://github.com/razzmatazz/csharp-language-server) failing to detect the dotnet installation.
 
 # Contents
 
