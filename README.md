@@ -7,22 +7,23 @@
 
 </div>
 
+> :warning: Currently, as reported in #6, there could be some issues with some language servers failing to detect the dotnet installation.
+
 # Contents
 
 - [Dependencies](#dependencies)
 - [Install](#install)
-- [Why?](#why)
 - [Contributing](#contributing)
 - [License](#license)
+- [Updating DOTNET_ROOT and MsBuildSDksPath](#updating-variables)
 
 # Dependencies
 
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `bash`, `curl`, `grep`, `sed`, `git`: generic POSIX utilities.
 
 # Install
 
-Plugin:
+Installing this plugin:
 
 ```shell
 asdf plugin add dotnet
@@ -30,7 +31,7 @@ asdf plugin add dotnet
 asdf plugin add dotnet https://github.com/hensou/asdf-dotnet.git
 ```
 
-dotnet:
+Installing a dotnet version:
 
 ```shell
 # Show all installable versions
@@ -48,6 +49,22 @@ dotnet --version
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
+
+# <a id="updating-variables"></a>Updating DOTNET_ROOT and MsBuildSDksPath
+
+According to your shell, add the following instructions to update or set the DOTNET_ROOT and MsBuildSDksPath environment variables:
+
+For bash, use:
+
+`. ~/.asdf/plugins/dotnet/set-dotnet-home.bash`
+
+For zsh shell, instead use:
+
+`. ~/.asdf/plugins/dotnet/set-dotnet-home.zsh`
+
+For fish shell, instead use:
+
+`source ~/.asdf/plugins/dotnet/set-dotnet-home.fish`
 
 # Contributing
 
