@@ -56,15 +56,15 @@ According to your shell, add the following instructions to update or set the DOT
 
 For bash, use:
 
-`. ~/.asdf/plugins/dotnet/set-dotnet-home.bash`
+`. ~/.asdf/plugins/dotnet/set-dotnet-env.bash`
 
 For zsh shell, instead use:
 
-`. ~/.asdf/plugins/dotnet/set-dotnet-home.zsh`
+`. ~/.asdf/plugins/dotnet/set-dotnet-env.zsh`
 
 For fish shell, instead use:
 
-`source ~/.asdf/plugins/dotnet/set-dotnet-home.fish`
+`source ~/.asdf/plugins/dotnet/set-dotnet-env.fish`
 
 # Contributing
 
