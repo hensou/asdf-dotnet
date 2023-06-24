@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.1...v1.0.2) (2023-06-24)
+
+
+### Bug Fixes
+
+* use regex instead of 'dotnet version' to speed up fish prompt ([39651fb](https://www.github.com/hensou/asdf-dotnet/commit/39651fb3db7f867080efd5f85b0809a3ed33ba0f))
+
 ### [1.0.1](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.0...v1.0.1) (2023-03-16)
 
 
