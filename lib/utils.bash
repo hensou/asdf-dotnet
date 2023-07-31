@@ -91,7 +91,7 @@ install_version() {
   (
     mkdir -p "$install_path"
 
-    "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel Current --version "$ASDF_INSTALL_VERSION" --no-path
+    "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel STS --version "$ASDF_INSTALL_VERSION" --no-path
 
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
