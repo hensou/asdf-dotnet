@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.2...v1.0.3) (2023-07-31)
+
+
+### Bug Fixes
+
+* remove "Current" channel warning by specifying  "STS" channel ([05bb284](https://www.github.com/hensou/asdf-dotnet/commit/05bb284dc82c958fe3e73579db997c0e4bfd32a1))
+
 ### [1.0.2](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.1...v1.0.2) (2023-06-24)
 
 
