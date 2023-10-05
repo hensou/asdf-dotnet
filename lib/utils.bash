@@ -55,7 +55,7 @@ gnutac() {
 }
 
 list_all_versions() {
-  echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY) | sed 's/ /\n/g'
+  echo $(download | match_key $FILE | sanitize $FILE | xargs -n 1 -P 0 curl | match_key $KEY | sanitize $KEY | sort -r) | sed 's/ /\n/g'
 }
 
 download_installer() {
