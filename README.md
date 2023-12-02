@@ -12,6 +12,7 @@
 # Contents
 
 - [Dependencies](#dependencies)
+- [Telemetry](#telemetry)
 - [Install](#install)
 - [Contributing](#contributing)
 - [License](#license)
@@ -20,6 +21,22 @@
 # Dependencies
 
 - `bash`, `curl`, `grep`, `sed`, `git`: generic POSIX utilities.
+
+# Telemetry
+
+> :warning: Once installed, the .NET SDK will collect telemetry by default ([learn more](https://learn.microsoft.com/en-us/dotnet/core/tools/telemetry#how-to-opt-out)). If you don't want to send analytics data to Microsoft, follow the instructions below before (or after) installing the SDK.
+
+To disable telemetry, add the following line to your shell profile (`~/.bashrc`, `~/.zshrc`, `~/.config/fish/config.fish`, etc.):
+
+```shell
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+```
+
+Once added, reload your profile for the changes to take effect.
+
+```shell
+exec $SHELL
+```
 
 # Install
 
