@@ -7,6 +7,7 @@ asdf_update_dotnet_home() {
     export MSBuildSDKsPath
     DOTNET_VERSION="$(dotnet --version)"
     export MSBuildSDKsPath="$DOTNET_ROOT/sdk/$DOTNET_VERSION/Sdks"
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
   fi
 }
 
