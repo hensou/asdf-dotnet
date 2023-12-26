@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.3...v1.1.0) (2023-12-26)
+
+
+### Features
+
+* disable telemetry when setting global environment variables ([ebe399c](https://www.github.com/hensou/asdf-dotnet/commit/ebe399cd5400dfb11158824fa06d1a1b2a28dd1b))
+
 ### [1.0.3](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.2...v1.0.3) (2023-07-31)
 
 
