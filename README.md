@@ -72,6 +72,10 @@ For fish shell, instead use:
 
 `source ~/.asdf/plugins/dotnet/set-dotnet-env.fish`
 
+For xonsh shell, instead use:
+
+`source ~/.asdf/plugins/dotnet/set-dotnet-env.xsh`
+
 # Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
