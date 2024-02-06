@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.1.0...v1.2.0) (2024-02-06)
+
+
+### Features
+
+* adds a set-dotnet-env script for xonsh ([#20](https://www.github.com/hensou/asdf-dotnet/issues/20)) ([1675206](https://www.github.com/hensou/asdf-dotnet/commit/1675206288dbcdfd1157534338e35076b0da55d3))
+
 ## [1.1.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.0.3...v1.1.0) (2023-12-26)
 
 
