@@ -35,7 +35,7 @@ FILE="releases.json"
 KEY="latest-sdk"
 
 download() {
-  curl -s $RELEASES_URI
+  curl "${curl_opts[@]}" $RELEASES_URI
 }
 
 match_key() {
