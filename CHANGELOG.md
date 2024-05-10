@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/hensou/asdf-dotnet/compare/v1.2.0...v1.2.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* use curl_options when using curl in download function ([28750fe](https://www.github.com/hensou/asdf-dotnet/commit/28750fede28d27efdb584f9fae5007b4ef3d146c)), closes [#28](https://www.github.com/hensou/asdf-dotnet/issues/28)
+
 ## [1.2.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.1.0...v1.2.0) (2024-02-06)
 
 
