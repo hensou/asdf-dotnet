@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.2.1...v1.3.0) (2024-05-21)
+
+
+### Features
+
+* makes asdf-dotnet list all versions and improves performance ([ab4759e](https://www.github.com/hensou/asdf-dotnet/commit/ab4759e1e51092c3907df65be93227bfa9fb9294))
+
+
+### Bug Fixes
+
+* remove sort_versions call ([5aa24bb](https://www.github.com/hensou/asdf-dotnet/commit/5aa24bbdf380d35c33ec46ad348a36f80b393bb3))
+
 ### [1.2.1](https://www.github.com/hensou/asdf-dotnet/compare/v1.2.0...v1.2.1) (2024-05-10)
 
 
