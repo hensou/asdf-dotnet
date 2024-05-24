@@ -1,0 +1,15 @@
+{
+  "name": "asdf-dotnet-release-action",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "updateVersions.mjs",
+  "scripts": {
+    "start": "node updateVersions.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "semver": "^7.6.2"
+  }
+}

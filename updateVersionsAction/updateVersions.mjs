@@ -1,9 +1,12 @@
 import { writeFile } from "fs/promises";
+import parse from "semver/functions/parse.js";
+import compare from "semver/functions/compare.js";
 
 (async () => {
   const channelReleasesURL =
     "https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json";
 
+  console.info("fetching channel releases");
   const res = await fetch(channelReleasesURL);
   const data = await res.json();
   const channelReleases = data["releases-index"];
@@ -15,6 +18,9 @@ import { writeFile } from "fs/promises";
     const releasesURL = channelRelease["releases.json"];
     const res = await fetch(releasesURL);
     const data = await res.json();
+    console.info(
+      `extracting versions from channel-version=${data["channel-version"]}`,
+    );
     const releasesSdks = data["releases"].flatMap((r) => {
       if ("sdks" in r && r["sdks"] != null) {
         return r.sdks;
@@ -28,12 +34,11 @@ import { writeFile } from "fs/promises";
     versions.push(...sdkVersions);
   }, Promise.resolve());
 
-  const content =
-    versions
-      .flatMap((v) => v)
-      .reverse()
-      .join("\n") + "\n";
-  await writeFile("versions.txt", content, {
+  const content = versions.flatMap(parse).sort(compare).join("\n") + "\n";
+
+  console.info(`writing versions.txt file`);
+  await writeFile("../versions.txt", content, {
     flag: "w+",
   });
+  console.info(`done`);
 })();
