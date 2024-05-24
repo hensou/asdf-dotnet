@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-       working-directory: './updateVersions/'
+       working-directory: 'updateVersions/'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
