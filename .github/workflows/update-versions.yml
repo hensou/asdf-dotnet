@@ -3,15 +3,18 @@ name: Update versions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 10,19 * * *"
+    - cron: "30 10,19 * * *" # Runs at 10:30 and 19:30 UTC. 
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  release-please:
+  update-versions:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+       working-directory: './updateVersions'
     steps:
       - uses: actions/checkout@v4
       - run: cd updateVersionsAction
