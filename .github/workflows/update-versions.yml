@@ -14,9 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: cd updateVersionsAction
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Install node dependencies
+        run: npm install
       - run: node updateVersions.mjs
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
