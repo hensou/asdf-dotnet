@@ -21,6 +21,7 @@ import compare from "semver/functions/compare.js";
     console.info(
       `extracting versions from channel-version=${data["channel-version"]}`,
     );
+
     const releasesSdks = data["releases"].flatMap((r) => {
       if ("sdks" in r && r["sdks"] != null) {
         return r.sdks;
@@ -34,7 +35,12 @@ import compare from "semver/functions/compare.js";
     versions.push(...sdkVersions);
   }, Promise.resolve());
 
-  const content = versions.flatMap(parse).sort(compare).join("\n") + "\n";
+  const content =
+    versions
+      .filter((version, index) => index == versions.indexOf(version))
+      .flatMap(parse)
+      .sort(compare)
+      .join("\n") + "\n";
 
   console.info(`writing versions.txt file`);
   await writeFile("../versions.txt", content, {
