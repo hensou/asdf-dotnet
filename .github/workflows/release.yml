@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - main
-      
+    paths:
+      - "!.github/workflows/update-versions.yml"
+
 permissions:
   contents: write
   pull-requests: write
-  
+
 jobs:
   release-please:
     runs-on: ubuntu-latest

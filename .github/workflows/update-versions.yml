@@ -3,7 +3,7 @@ name: Update versions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 10,19 * * *" # Runs at 10:30 and 19:30 UTC. 
+    - cron: "30 10,19 * * *" # Runs at 10:30 and 19:30 UTC.
 
 permissions:
   contents: write
@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-       working-directory: 'updateVersions/'
+        shell: bash
+        working-directory: "updateVersionsAction/"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

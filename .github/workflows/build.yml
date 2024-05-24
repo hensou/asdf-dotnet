@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "!.github/workflows/update-versions.yml"
   pull_request:
 
 jobs:

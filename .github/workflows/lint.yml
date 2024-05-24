@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "!.github/workflows/update-versions.yml"
   pull_request:
 
 jobs:
@@ -33,4 +35,3 @@ jobs:
 
       - name: Run shfmt
         run: scripts/shfmt.bash
-
