@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function asdf_update_dotnet_home --on-event fish_prompt
     set --local dotnet_path (asdf which dotnet)
     if test -n "$dotnet_path"

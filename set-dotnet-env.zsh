@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 asdf_update_dotnet_home() {
   local dotnet_path
   dotnet_path="$(asdf which dotnet)"
