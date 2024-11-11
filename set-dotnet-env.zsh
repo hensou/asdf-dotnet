@@ -1,6 +1,8 @@
+#!/usr/bin/env zsh
+
 asdf_update_dotnet_home() {
   local dotnet_path
-  dotnet_path="$(asdf which dotnet)"
+  dotnet_path="$(asdf which dotnet 2>/dev/null)"
   if [[ -n "${dotnet_path}" ]]; then
     export DOTNET_ROOT
     DOTNET_ROOT="$(dirname "$(realpath "${dotnet_path}")")"
