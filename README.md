@@ -55,7 +55,7 @@ install & manage versions.
 If you need to:
 
 - update/set `DOTNET_ROOT` variable
-- update/set `MsBuildSDksPath` variable
+- update/set `MSBuildSDKsPath` variable
 - disable telemetry (i.e. set `DOTNET_CLI_TELEMETRY_OPTOUT` to 1)
 
 then, according to your shell, execute one of the following commands:
