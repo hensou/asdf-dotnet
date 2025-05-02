@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if [ "${DOTNET_ROOT:-}" = "" ]; then
+  export DOTNET_ROOT="$ASDF_INSTALL_PATH"
+fi
