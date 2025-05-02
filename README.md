@@ -9,6 +9,8 @@
 
 > :warning: Currently, as reported in #6, there could be some issues with [csharp-ls](https://github.com/razzmatazz/csharp-language-server) failing to detect the dotnet installation.
 
+> :warning: If you are using different dotnet versions for dotnet tools, you still need to manually set DOTNET_ROOT.
+
 # Contents
 
 - [Dependencies](#dependencies)
@@ -50,9 +52,9 @@ dotnet --version
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
-# <a id="updating-variables"></a>Updating global environment variables
+# <a id="updating-variables"></a> Manutally updating global environment variables
 
-If you need to:
+If you need to manually:
 
 - update/set `DOTNET_ROOT` variable
 - update/set `MSBuildSDKsPath` variable
