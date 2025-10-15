@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.1](https://www.github.com/hensou/asdf-dotnet/compare/v1.4.0...v1.4.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* set-dotnet-env.fish [20eb1f1](https://github.com/hensou/asdf-dotnet/commit/20eb1f18082ffe96bfb106cb797736082f0f9712)
+
+## [1.4.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.3.0...v1.4.0) (2024-05-21)
+
+
+### Features
+
+* setup DOTNET_ROOT env using exec-env hook[544ccdb](https://github.com/hensou/asdf-dotnet/commit/544ccdb02806ec91daa1b0a7ded658eb27ef02bc)
+* makes asdf-dotnet list all versions and improves performance ([ab4759e](https://www.github.com/hensou/asdf-dotnet/commit/ab4759e1e51092c3907df65be93227bfa9fb9294))
+
 ## [1.3.0](https://www.github.com/hensou/asdf-dotnet/compare/v1.2.1...v1.3.0) (2024-05-21)
 
 
