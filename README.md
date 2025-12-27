@@ -37,7 +37,7 @@ Installing a dotnet version:
 
 ```shell
 # Show all installable versions
-asdf list-all dotnet
+asdf list all dotnet
 
 # Install specific version
 asdf install dotnet latest
