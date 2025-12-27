@@ -43,7 +43,7 @@ asdf list all dotnet
 asdf install dotnet latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf set dotnet latest
+asdf set -u dotnet latest
 
 # Now dotnet commands are available
 dotnet --version
