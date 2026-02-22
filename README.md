@@ -52,7 +52,7 @@ dotnet --version
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
 
-# <a id="updating-variables"></a> Manutally updating global environment variables
+# <a id="updating-variables"></a> Manually updating global environment variables
 
 If you need to manually:
 
