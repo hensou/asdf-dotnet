@@ -42,11 +42,14 @@ asdf list all dotnet
 # Install specific version
 asdf install dotnet latest
 
+## Install multiply dotnet SDKs versions also supported (comma-separated list syntax)
+# asdf install dotnet 8.0.411,10.0.300
+
 # Set a version globally (on your ~/.tool-versions file)
 asdf set -u dotnet latest
 
 # Now dotnet commands are available
-dotnet --version
+dotnet --info
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
