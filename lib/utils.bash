@@ -43,7 +43,8 @@ install_version() {
   (
     mkdir -p "$install_path"
 
-    IFS=','
+    local nparts=0
+    IFS=',+;-_'
     for version in $ASDF_INSTALL_VERSION; do
       if [ -d "$ASDF_INSTALL_PATH/../$version" ] && [ ! -z "$(ls -Aq "$ASDF_INSTALL_PATH/../$version")" ]; then
         echo "asdf-$TOOL_NAME skip install $version: already installed in [$ASDF_INSTALL_PATH/../$version]"
@@ -51,9 +52,10 @@ install_version() {
         echo "asdf-$TOOL_NAME installing $version to [$ASDF_INSTALL_PATH/../$version]..."
         "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH/../$version" --channel STS --version "$version" --no-path
       fi
+      nparts=$((nparts+1))
     done
 
-    if [[ "$ASDF_INSTALL_VERSION" == *"$IFS"* ]]; then
+    if [[ $nparts -ge 1 ]]; then
       for version in $ASDF_INSTALL_VERSION; do
         # NOTE: we cant use '--symbolic-link' - the dotnet command does not see all sdks with this option.
         cp -ra --update=none "$ASDF_INSTALL_PATH/../$version/." "$ASDF_INSTALL_PATH/"
