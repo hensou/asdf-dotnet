@@ -33,7 +33,7 @@ download_installer() {
 
 install_version() {
   local install_type="$1"
-  local version="$2"
+  local versions="$2"
   local install_path="$3"
 
   if [ "$install_type" != "version" ]; then
@@ -43,16 +43,33 @@ install_version() {
   (
     mkdir -p "$install_path"
 
-    "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel STS --version "$ASDF_INSTALL_VERSION" --no-path
+    local nparts=0
+    IFS=',+;-_'
+    for version in $ASDF_INSTALL_VERSION; do
+      if [ -d "$ASDF_INSTALL_PATH/../$version" ] && [ ! -z "$(ls -Aq "$ASDF_INSTALL_PATH/../$version")" ]; then
+        echo "asdf-$TOOL_NAME skip install $version: already installed in [$ASDF_INSTALL_PATH/../$version]"
+      else
+        echo "asdf-$TOOL_NAME installing $version to [$ASDF_INSTALL_PATH/../$version]..."
+        "$ASDF_DOWNLOAD_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH/../$version" --channel STS --version "$version" --no-path
+      fi
+      nparts=$((nparts+1))
+    done
+
+    if [[ $nparts -ge 1 ]]; then
+      for version in $ASDF_INSTALL_VERSION; do
+        # NOTE: we cant use '--symbolic-link' - the dotnet command does not see all sdks with this option.
+        cp -ra --update=none "$ASDF_INSTALL_PATH/../$version/." "$ASDF_INSTALL_PATH/"
+      done
+    fi
 
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     rm -rf "$ASDF_DOWNLOAD_PATH/dotnet-install.sh"
-    echo "$TOOL_NAME $version installation was successful!"
+    echo "$TOOL_NAME $versions installation was successful!"
   ) || (
     rm -rf "$install_path"
-    fail "An error ocurred while installing $TOOL_NAME $version."
+    fail "An error ocurred while installing $TOOL_NAME $versions."
   )
 }
